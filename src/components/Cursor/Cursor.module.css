@@ -1,0 +1,57 @@
+.dot, .ring {
+  position: fixed;
+  pointer-events: none;
+  z-index: 999999;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: left, top, transform, width, height, background-color, border-color;
+  transition: opacity 0.3s ease;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-glow);
+  box-shadow: 0 0 10px var(--primary-glow), 0 0 20px var(--primary-glow);
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
+}
+
+.ring {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(0, 245, 255, 0.4);
+  /* Use a cubic-bezier transition to simulate physical spring friction */
+  transition: 
+    left 0.15s cubic-bezier(0.25, 1, 0.5, 1), 
+    top 0.15s cubic-bezier(0.25, 1, 0.5, 1), 
+    width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+    height 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+    background-color 0.3s ease, 
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.ring.hovered {
+  width: 65px;
+  height: 65px;
+  border-color: var(--primary-glow);
+  background-color: rgba(0, 245, 255, 0.04);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.2);
+}
+
+.dot.mouseDown {
+  transform: translate3d(-50%, -50%, 0) scale(0.6);
+  background-color: var(--secondary-glow);
+}
+
+.ring.mouseDown {
+  width: 32px;
+  height: 32px;
+  border-color: var(--secondary-glow);
+  box-shadow: 0 0 12px rgba(123, 97, 255, 0.3);
+}

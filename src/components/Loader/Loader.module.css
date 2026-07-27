@@ -1,0 +1,108 @@
+.loaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #050816;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.fadeOut {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.bgGlow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.15) 0%, rgba(123, 97, 255, 0.05) 50%, transparent 100%);
+  filter: blur(60px);
+  animation: pulse 4s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  z-index: 10;
+}
+
+.logoWrapper {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoSvg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* Start circle stroke from top */
+}
+
+.circleStroke {
+  transition: stroke-dashoffset 0.1s linear;
+  filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.6));
+}
+
+.logoText {
+  transform: rotate(90deg); /* Counter-rotate text so it remains upright */
+  transform-origin: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: textFlicker 2s infinite alternate;
+}
+
+@keyframes textFlicker {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.progressTrack {
+  width: 180px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #00F5FF 0%, #7B61FF 100%);
+  box-shadow: 0 0 8px rgba(0, 245, 255, 0.8);
+  transition: width 0.1s linear;
+}
+
+.percentage {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: #94A3B8;
+  margin-left: 5px; /* Offset spacing offset */
+}

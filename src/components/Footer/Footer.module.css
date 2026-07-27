@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
+.footer {
+  background-color: rgba(5, 8, 22, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px 8%;
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.copyright {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.tag {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.signatureWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.signature {
+  font-family: 'Alex Brush', cursive;
+  font-size: 38px;
+  color: var(--primary-glow);
+  text-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+  user-select: none;
+  position: relative;
+}
+
+.signature::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: -5px;
+  width: 110%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-glow), transparent);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}

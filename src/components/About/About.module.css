@@ -1,0 +1,246 @@
+.aboutSection {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: transparent;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionSub {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.paragraph {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.careerGoal {
+  margin-top: 15px;
+  padding: 20px;
+  border-left: 2px solid var(--primary-glow);
+  background-color: rgba(0, 245, 255, 0.01);
+  border-radius: 0 8px 8px 0;
+}
+
+.goalTitle {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.goalText {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-glow), transparent);
+  opacity: 0.5;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.infoIcon {
+  font-size: 18px;
+  color: var(--primary-glow);
+  margin-top: 3px;
+  filter: drop-shadow(0 0 4px rgba(0, 245, 255, 0.5));
+}
+
+.infoLabel {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.infoValue {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.infoLink {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.infoLink:hover {
+  color: var(--primary-glow);
+}
+
+.eduCard::before {
+  background: linear-gradient(90deg, transparent, var(--secondary-glow), transparent);
+}
+
+.eduHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.eduHeaderIcon {
+  font-size: 20px;
+  color: var(--secondary-glow);
+  filter: drop-shadow(0 0 4px rgba(123, 97, 255, 0.5));
+}
+
+.eduHeader .cardTitle {
+  margin-bottom: 0;
+}
+
+.eduTimeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+.eduTimeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 1px;
+  height: calc(100% - 16px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.timelineItem {
+  position: relative;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -20px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--secondary-glow);
+  box-shadow: 0 0 8px var(--secondary-glow);
+}
+
+.eduTitle {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.eduStatus {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 500;
+  margin: 3px 0 8px;
+}
+
+.eduDetail {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 80px 6%;
+  }
+  .card {
+    padding: 24px;
+  }
+}
