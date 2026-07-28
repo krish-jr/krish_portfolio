@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Contact.module.css';
-import { FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle } from 'react-icons/fi';
+import { FiGithub, FiInstagram, FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import Magnetic from '../Magnetic/Magnetic';
 
 export default function Contact() {
@@ -68,7 +69,7 @@ export default function Contact() {
                   <FiMapPin className={styles.detailIcon} />
                   <div>
                     <span>Location</span>
-                    <p>Tamil Nadu, India</p>
+                    <p>Ramanathapuram, Tamil Nadu, India</p>
                   </div>
                 </div>
               </div>
@@ -77,8 +78,11 @@ export default function Contact() {
                 <a href="https://github.com/krish-jr" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
                   <FiGithub />
                 </a>
-                <a href="https://linkedin.com/in/gopalasri" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
-                  <FiLinkedin />
+                <a href="https://www.instagram.com/_krish.39t?igsh=MWl5eG94MnE5dmUzYQ%3D%3D" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram">
+                  <FiInstagram />
+                </a>
+                <a href="https://wa.me/917708179016" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="WhatsApp">
+                  <FaWhatsapp />
                 </a>
               </div>
             </motion.div>

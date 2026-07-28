@@ -13,7 +13,6 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 8%;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -44,12 +43,12 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(250px, 30vw, 320px), 1fr));
+  gap: clamp(16px, 3vw, 30px);
 }
 
 .learningCard {
-  padding: 30px;
+  padding: clamp(20px, 4vw, 30px);
   display: flex;
   flex-direction: column;
   gap: 25px;

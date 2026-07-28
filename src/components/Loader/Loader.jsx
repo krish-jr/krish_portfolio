@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FiCode, FiUser, FiGlobe } from 'react-icons/fi';
 import styles from './Loader.module.css';
 
 export default function Loader({ onComplete }) {
@@ -8,13 +9,13 @@ export default function Loader({ onComplete }) {
   useEffect(() => {
     document.body.classList.add('loading');
 
-    const duration = 2000; // 2 seconds duration
-    const intervalTime = 16; // Approx 60fps
+    const duration = 2200; // 2.2 seconds duration
+    const intervalTime = 16;
     const step = 100 / (duration / intervalTime);
     let currentProgress = 0;
 
     const timer = setInterval(() => {
-      const jitter = Math.random() * 2.5;
+      const jitter = Math.random() * 2.2;
       currentProgress += step + jitter;
       
       if (currentProgress >= 100) {
@@ -25,8 +26,8 @@ export default function Loader({ onComplete }) {
           setTimeout(() => {
             document.body.classList.remove('loading');
             onComplete();
-          }, 800); // Match slide transition
-        }, 300);
+          }, 700);
+        }, 250);
       } else {
         setProgress(Math.min(100, Math.floor(currentProgress)));
       }
@@ -40,56 +41,46 @@ export default function Loader({ onComplete }) {
 
   return (
     <div className={`${styles.loaderContainer} ${isDone ? styles.fadeOut : ''}`}>
-      {/* Background noise and glows */}
-      <div className={styles.bgGlow}></div>
+      {/* Radial ambient background glow */}
+      <div className={styles.radialGlow}></div>
       
       <div className={styles.content}>
-        <div className={styles.logoWrapper}>
-          <svg className={styles.logoSvg} viewBox="0 0 100 100">
-            <defs>
-              <linearGradient id="loaderLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00F5FF" />
-                <stop offset="100%" stopColor="#7B61FF" />
-              </linearGradient>
-            </defs>
-            {/* SVG circle stroke animation */}
-            <circle 
-              cx="50" 
-              cy="50" 
-              r="40" 
-              fill="none" 
-              stroke="url(#loaderLogoGrad)" 
-              strokeWidth="2" 
-              strokeDasharray="250" 
-              strokeDashoffset={250 - (progress * 2.5)} 
-              className={styles.circleStroke} 
-            />
-            {/* Initials in the center */}
-            <text 
-              x="50%" 
-              y="55%" 
-              textAnchor="middle" 
-              fill="#FFFFFF" 
-              fontSize="22" 
-              fontFamily="'Syne', sans-serif" 
-              fontWeight="800" 
-              letterSpacing="1px"
-              className={styles.logoText}
-            >
-              GS
-            </text>
-          </svg>
+        {/* Top 3 Circular Icon Badges */}
+        <div className={styles.iconRow}>
+          <div className={styles.iconBadge} aria-label="Code">
+            <FiCode />
+          </div>
+          <div className={styles.iconBadge} aria-label="User">
+            <FiUser />
+          </div>
+          <div className={styles.iconBadge} aria-label="Globe">
+            <FiGlobe />
+          </div>
         </div>
-        
-        <div className={styles.progressTrack}>
-          <div 
-            className={styles.progressBar} 
-            style={{ width: `${progress}%` }}
-          ></div>
+
+        {/* Welcome Title */}
+        <div className={styles.titleWrapper}>
+          <h1 className={styles.titleLine1}>Welcome to my</h1>
+          <h1 className={styles.titleLine2}>Portfolio Website</h1>
         </div>
-        
-        <div className={styles.percentage}>
-          {progress.toString().padStart(3, '0')}%
+
+        {/* Subtitle */}
+        <p className={styles.subtitle}>Creating Websites That Feel Alive.</p>
+
+        {/* Pill Badge */}
+        <div className={styles.pillBadge}>
+          <span>P. GOPALA SRI</span>
+          <span className={styles.cursor}>|</span>
+        </div>
+
+        {/* Horizontal Progress Bar */}
+        <div className={styles.progressContainer}>
+          <div className={styles.progressTrack}>
+            <div 
+              className={styles.progressBar} 
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
         </div>
       </div>
     </div>

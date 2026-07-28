@@ -3,9 +3,10 @@
 .footer {
   background-color: rgba(5, 8, 22, 0.95);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 40px 8%;
+  padding: clamp(30px, 4vh, 50px) clamp(16px, 5vw, 60px);
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .container {
@@ -45,7 +46,7 @@
 
 .signature {
   font-family: 'Alex Brush', cursive;
-  font-size: 38px;
+  font-size: clamp(30px, 5vw, 38px);
   color: var(--primary-glow);
   text-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
   user-select: none;

@@ -14,8 +14,8 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 80px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(30px, 5vw, 80px);
   align-items: center;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .card {
-  padding: 30px;
+  padding: clamp(20px, 4vw, 30px);
   position: relative;
   overflow: hidden;
 }
@@ -141,6 +141,8 @@
   font-size: 15px;
   color: var(--text-primary);
   font-weight: 500;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .infoLink {
@@ -150,6 +152,8 @@
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 .infoLink:hover {

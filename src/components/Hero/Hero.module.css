@@ -4,11 +4,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 130px 10% 60px 10%;
+  padding: clamp(100px, 12vh, 160px) clamp(16px, 6vw, 60px) clamp(40px, 6vh, 80px);
   position: relative;
   overflow: hidden;
   background-color: transparent;
   z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gridLines {
@@ -26,6 +28,7 @@
 }
 
 .heroContent {
+  width: 100%;
   max-width: 850px;
   display: flex;
   flex-direction: column;
@@ -35,7 +38,7 @@
 
 .greeting {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: clamp(12px, 1.5vw, 14px);
   font-weight: 500;
   letter-spacing: 3px;
   color: var(--accent);
@@ -53,18 +56,20 @@
 
 .name {
   font-family: var(--font-display);
-  font-size: clamp(48px, 8vw, 88px);
+  font-size: clamp(32px, 8.5vw, 84px);
   font-weight: 800;
-  line-height: 1.0;
+  line-height: 1.05;
   letter-spacing: -0.03em;
   color: var(--text-primary);
   margin-bottom: 5px;
   text-transform: uppercase;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .tagline {
   font-family: var(--font-heading);
-  font-size: clamp(22px, 3.8vw, 42px);
+  font-size: clamp(18px, 3.5vw, 40px);
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -86,9 +91,10 @@
 
 .description {
   font-family: var(--font-body);
-  font-size: clamp(15px, 1.8vw, 17px);
+  font-size: clamp(14px, 1.8vw, 17px);
   line-height: 1.65;
   color: var(--text-muted);
+  width: 100%;
   max-width: 620px;
   margin-bottom: 25px;
 }

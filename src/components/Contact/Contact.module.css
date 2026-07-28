@@ -14,10 +14,9 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 8%;
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 80px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(30px, 5vw, 80px);
   align-items: center;
 }
 
@@ -134,7 +133,7 @@
 
 /* Form Styling */
 .formCol {
-  padding: 40px;
+  padding: clamp(20px, 4vw, 40px);
   position: relative;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.02);
@@ -175,7 +174,7 @@
   border-radius: 16px;
   color: #ffffff;
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
   transition: all 0.3s ease;
   box-sizing: border-box;

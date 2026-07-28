@@ -14,7 +14,6 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 8%;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -104,17 +103,17 @@
 }
 
 .expCard {
-  width: calc(100% - 40px);
-  padding: 30px;
+  width: calc(100% - clamp(20px, 4vw, 40px));
+  padding: clamp(20px, 4vw, 30px);
   position: relative;
 }
 
 .leftItem .expCard {
-  margin-right: 40px;
+  margin-right: clamp(20px, 4vw, 40px);
 }
 
 .rightItem .expCard {
-  margin-left: 40px;
+  margin-left: clamp(20px, 4vw, 40px);
 }
 
 .period {
