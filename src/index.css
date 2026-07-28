@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;700;900&family=Syne:wght@400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;700;900&family=Syne:wght@400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=UnifrakturMaguntia&family=UnifrakturCook:wght@700&family=Pirata+One&family=MedievalSharp&family=Great+Vibes&family=Cinzel+Decorative:wght@700;900&family=Kaushan+Script&family=Caveat:wght@700&family=Yellowtail&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -79,10 +79,30 @@
   --font-display: 'Syne', sans-serif;
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Space Grotesk', sans-serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-gothic: 'UnifrakturMaguntia', 'MedievalSharp', 'Pirata One', 'UnifrakturCook', serif;
+  --font-swash: 'Cinzel Decorative', serif;
+  --font-ballerick: 'Kaushan Script', 'Caveat', 'Yellowtail', cursive;
   
   --glow-shadow-primary: 0 0 30px rgba(255, 45, 85, 0.3);
   --glow-shadow-secondary: 0 0 30px rgba(255, 255, 255, 0.2);
   --glass-blur: blur(12px);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-gothic {
+  font-family: var(--font-gothic);
+}
+
+.font-swash {
+  font-family: var(--font-swash);
+}
+
+.font-ballerick {
+  font-family: var(--font-ballerick);
 }
 
 * {

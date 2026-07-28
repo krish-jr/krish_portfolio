@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="85 180 330 145" width="100%" height="100%">
+  <!-- Ultra-sharp bright white JR monogram -->
+  <g fill="#FFFFFF">
+    <!-- Sharp J stroke -->
+    <polygon points="95,268 202,305 240,188 222,316" />
+    <!-- Sharp R stroke -->
+    <polygon points="248,188 366,212 316,246 408,316 358,316 268,274 332,242 265,230 248,316 230,316" />
+  </g>
+</svg>

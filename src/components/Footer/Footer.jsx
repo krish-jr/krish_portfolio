@@ -19,13 +19,13 @@ export default function Footer() {
 
         <div className={styles.signatureWrapper}>
           <motion.div 
-            className={styles.signature}
+            className={`${styles.signature} font-ballerick text-4xl sm:text-5xl font-bold text-white tracking-wide`}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            Gopala Sri
+            Krish Jr
           </motion.div>
         </div>
       </div>

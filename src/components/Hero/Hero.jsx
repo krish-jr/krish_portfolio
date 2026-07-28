@@ -5,6 +5,8 @@ import styles from './Hero.module.css';
 import { FiArrowDown, FiArrowRight } from 'react-icons/fi';
 import ShaderBackground from '../Canvas3D/ShaderBackground';
 
+import VaporizeTextScroll from './VaporizeTextScroll';
+
 export default function Hero() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -62,13 +64,20 @@ export default function Hero() {
           <span>Available for full stack & AI roles</span>
         </motion.div>
 
-        {/* Main Name Heading */}
-        <motion.h1 
-          className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 font-heading leading-tight mb-2" 
-          variants={itemVariants}
-        >
-          {titleText}
-        </motion.h1>
+        {/* Main Name Heading with Scroll-Driven Vaporize Particle Effect */}
+        <motion.div className="w-full my-1" variants={itemVariants}>
+          <VaporizeTextScroll 
+            text={titleText}
+            font={{
+              fontFamily: "UnifrakturMaguntia, MedievalSharp, Pirata One, serif",
+              fontSize: "80px",
+              fontWeight: 400
+            }}
+            color="rgb(255, 255, 255)"
+            spread={5}
+            density={5}
+          />
+        </motion.div>
 
         {/* Subtitle */}
         <motion.h2 

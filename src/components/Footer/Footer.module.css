@@ -45,10 +45,10 @@
 }
 
 .signature {
-  font-family: 'Alex Brush', cursive;
-  font-size: clamp(30px, 5vw, 38px);
+  font-family: var(--font-ballerick), 'Kaushan Script', cursive;
+  font-size: clamp(32px, 5vw, 42px);
   color: var(--primary-glow);
-  text-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+  text-shadow: 0 0 15px rgba(255, 45, 85, 0.4);
   user-select: none;
   position: relative;
 }

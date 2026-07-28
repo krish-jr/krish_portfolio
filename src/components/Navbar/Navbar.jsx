@@ -38,9 +38,14 @@ export default function Navbar() {
         {/* Brand Logo */}
         <a 
           href="#hero" 
-          className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-white font-heading hover:opacity-90 transition-opacity flex items-center gap-1.5 whitespace-nowrap"
+          className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-white hover:opacity-90 transition-opacity flex items-center gap-2.5 whitespace-nowrap group"
         >
-          <span>P. Gopala Sri</span>
+          <img 
+            src="/logo.svg" 
+            alt="JR Logo" 
+            className="h-6 sm:h-7.5 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
+          />
+          <span className="font-script text-2xl sm:text-3xl font-normal text-white tracking-wide">P. Gopala Sri</span>
           <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_10px_#FF2E4C] flex-shrink-0"></span>
         </a>
 
